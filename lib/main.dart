@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:phantom_clone/data/provider/crypto_provider.dart';
 import 'package:phantom_clone/views/pages/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => CryptoProvider())],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
