@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:phantom_clone/data/notifier.dart';
 import 'package:phantom_clone/data/provider/crypto_provider.dart';
 import 'package:phantom_clone/views/pages/home_page.dart';
+import 'package:phantom_clone/views/pages/swap_page.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  // await dotenv.load(fileName: ".env");
   runApp(
     MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CryptoProvider())],
@@ -24,18 +27,33 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.deepPurple,
           brightness: Brightness.dark,
         ),
+        bottomSheetTheme: BottomSheetThemeData(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      home: const MainPage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+List<Widget> pages = [HomePage(), SwapPage()];
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return ValueListenableBuilder(
+      valueListenable: selectedPage,
+      builder: (context, value, child) {
+        return pages.elementAt(value);
+      },
+    );
   }
 }

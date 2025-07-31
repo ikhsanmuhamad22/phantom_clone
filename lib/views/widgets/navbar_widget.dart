@@ -12,6 +12,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
   void _onSelectNav(int index) {
     setState(() {
       selectedNav.value = index;
+      selectedPage.value = index;
     });
   }
 

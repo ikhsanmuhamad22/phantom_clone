@@ -3,6 +3,7 @@ import 'package:phantom_clone/data/classes/crypto_class.dart';
 import 'package:phantom_clone/views/widgets/card_widget.dart';
 import 'package:phantom_clone/views/widgets/crypto_card_widget.dart';
 import 'package:phantom_clone/views/widgets/crypto_chart_widget.dart';
+import 'package:phantom_clone/views/widgets/navbar_widget.dart';
 import 'package:phantom_clone/views/widgets/price_pnl_widget.dart';
 
 class CryptoDetailPage extends StatelessWidget {
@@ -194,6 +195,54 @@ class CryptoDetailPage extends StatelessWidget {
           ),
         ),
       ),
+
+      bottomSheet: Container(
+        color: Colors.black26,
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        width: double.infinity,
+        child: SafeArea(
+          top: false,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Expanded(
+                child: FilledButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Colors.deepPurple,
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(style: TextStyle(color: Colors.black), 'Buy'),
+                ),
+              ),
+              SizedBox(width: 20),
+              Expanded(
+                child: FilledButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      Colors.deepPurple,
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(style: TextStyle(color: Colors.black), 'Sell'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: NavbarWidget(),
     );
   }
 
