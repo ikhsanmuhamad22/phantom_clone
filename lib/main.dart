@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:phantom_clone/data/notifier.dart';
 import 'package:phantom_clone/data/provider/crypto_provider.dart';
+import 'package:phantom_clone/views/pages/explore_page.dart';
+import 'package:phantom_clone/views/pages/history_page.dart';
 import 'package:phantom_clone/views/pages/home_page.dart';
 import 'package:phantom_clone/views/pages/swap_page.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-  // await dotenv.load(fileName: ".env");
   runApp(
     MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => CryptoProvider())],
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-List<Widget> pages = [HomePage(), SwapPage()];
+List<Widget> pages = [HomePage(), SwapPage(), HistoryPage(), ExplorePage()];
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
