@@ -8,12 +8,12 @@ class HistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Swap'),
+        title: Text('History'),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.list_outlined)),
         ],
       ),
-      body: Center(child: Text('History page')),
+      body: Center(child: Text('No History Found')),
       bottomNavigationBar: NavbarWidget(),
     );
   }

@@ -62,7 +62,7 @@ class CryptoCardWidget extends StatelessWidget {
                         style: TextStyle(fontSize: 14),
                       ),
                       Text(
-                        '${coin.percentChange24h}',
+                        '${coin.percentChange24h}%',
                         style: TextStyle(
                           fontSize: 14,
                           color:

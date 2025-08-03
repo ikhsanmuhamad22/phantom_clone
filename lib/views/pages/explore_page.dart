@@ -7,13 +7,8 @@ class ExplorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Swap'),
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.list_outlined)),
-        ],
-      ),
-      body: Center(child: Text('Explore page')),
+      appBar: AppBar(title: Text('Explore')),
+      body: Center(child: Text('This Feature Still prosess')),
       bottomNavigationBar: NavbarWidget(),
     );
   }
