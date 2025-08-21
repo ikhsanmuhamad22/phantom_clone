@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:phantom_clone/data/classes/crypto_class.dart';
 
-const baseUrl =
-    'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
-const apiKey = 'df054abc-fa87-4528-8709-9ca52be0ccd4';
-
 class CryptoProvider with ChangeNotifier {
   List<Crypto> _cryptos = [];
 

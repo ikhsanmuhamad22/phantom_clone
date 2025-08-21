@@ -21,18 +21,6 @@ class PricePnlWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (coin == null)
-              Text(
-                coin?.percentChange24h == null || coin!.percentChange24h == 0
-                    ? '- \$0.31'
-                    : '\$${coin?.percentChange24h.toStringAsFixed(2)}',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.red,
-                ),
-              ),
-            SizedBox(width: 10),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 4),
               decoration: BoxDecoration(
